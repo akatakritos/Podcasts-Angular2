@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcasts.Core", "Podcasts.Core\Podcasts.Core.csproj", "{B3917324-5459-4512-95F8-C64CF98E51C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Podcasts.Tests", "Podcasts.Tests\Podcasts.Tests.csproj", "{DDAB8799-FCE3-492D-AC1A-24C59FB6EA84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3917324-5459-4512-95F8-C64CF98E51C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3917324-5459-4512-95F8-C64CF98E51C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3917324-5459-4512-95F8-C64CF98E51C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3917324-5459-4512-95F8-C64CF98E51C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDAB8799-FCE3-492D-AC1A-24C59FB6EA84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAB8799-FCE3-492D-AC1A-24C59FB6EA84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAB8799-FCE3-492D-AC1A-24C59FB6EA84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAB8799-FCE3-492D-AC1A-24C59FB6EA84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

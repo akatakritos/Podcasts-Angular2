@@ -1,0 +1,871 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js gt-ie8">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>.NET Rocks! vNext</title>
+
+    <!--=================================
+    Meta tags
+    =================================-->
+
+    <meta name="description" content=".NET Rocks! is a weekly talk show for anyone interested in programming on the Microsoft .NET platform. The shows range from introductory information to hardcore geekiness." />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="google-site-verification" content="IqaxOqufsj_4E6wP9km-bcQu3FS5jQygnAP4Nw1dcO4" />
+    <link rel="apple-touch-icon" href="/Icon.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/Icon-72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/Icon-72@2x.png" />
+    <link rel="icon" type="image/png" href="/Icon.png" />
+
+    <meta property="og:site_name" content=".NET Rocks!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.dotnetrocks.com/?show=1304" />
+    <meta property="og:image" content="/Content/img/BG/DNR-OG.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content=".NET Rocks!">
+    <meta name="twitter:description" content=".NET Rocks! is a weekly talk show for anyone interested in programming on the Microsoft .NET platform. The shows range from introductory information to hardcore geekiness." />
+    <meta name="twitter:url" content="https://www.dotnetrocks.com/?show=1304" />
+    <meta name="twitter:image" content=/Content/img/BG/DNR-OG.jpg" />
+
+    <!--=================================
+    Style Sheets
+    =================================-->
+    <!--Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
+    <!--Plugins CSS Files-->
+
+    <link href="/Content/css?v=Vs7wFV2wRQHJsscT_BdpuG_ivCWWbh7jNLAvxpUiKxY1" rel="stylesheet" />
+
+    <script src="/bundles/modernizr?v=a3zvWz7Zvl0rlpWM7EmrHc29zk71aJs_JhBFzJAVKPU1"></script>
+
+
+    <script type="text/javascript">
+        if (!com) var com = {};
+        if (!com.dotnetrocks) com.dotnetrocks = {};
+        if (!com.dotnetrocks.factory) com.dotnetrocks.factory = {};
+        com.dotnetrocks.vars = { app_base: '', werock: null, playaPlay: null, markiwi: null, getQueryString: null, d_reset: null }
+
+        !function (a, b, c, d, e, f, g, h) {
+            a.RaygunObject = e, a[e] = a[e] || function () {
+                (a[e].o = a[e].o || []).push(arguments)
+            }, f = b.createElement(c), g = b.getElementsByTagName(c)[0],
+      f.async = 1, f.src = d, g.parentNode.insertBefore(f, g), h = a.onerror, a.onerror = function (b, c, d, f, g) {
+          h && h(b, c, d, f, g), g || (g = new Error(b)), a[e].q = a[e].q || [], a[e].q.push({
+              e: g
+          })
+      }
+        }(window, document, "script", "//cdn.raygun.io/raygun4js/raygun.min.js", "rg4js");
+    </script>
+</head>
+
+<body data-spy="scroll" data-target="#sticktop" data-offset="70">
+    <!--=====================================
+    Preloader
+    ========================================-->
+    <div id="jSplash">
+        <figure class="preload_logo"> <!--<img src="~/Content/img/basic/logo-alt.png" alt=""/>--> </figure>
+    </div>
+    <div class="spinner medium"></div>
+    <!--<div class="boxed_in box-wide">-->
+    <div class="wide_layout box-wide">
+        <!--=================================
+          Vegas Slider Images
+          =================================-->
+        <!--================
+           Banner
+          ====================-->
+        <section id="section_0" class="banner hero_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="hero_content animatedParent animateLoop">
+                            <h1></h1>
+                            <h1></h1>
+                            <h1 class="animated bounceInDown Parade"><span class="primary_color">&lt;</span>&nbsp;.NET Rocks!&nbsp;<span class="primary_color">/&gt;</span></h1>
+                            <!--<h4 class="animated bounceInLeft ">The Internet Talk Show for .NET Developers</h4>
+                              <h5 class="animated bounceInUp ">with Carl Franklin and Richard Campbell</h5>-->
+                            <a class="ScrollTo animated bounceInUp" href="#section_1"><i class="fa fa-angle-down"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--=================================
+            Audio Player
+            =================================-->
+            <!--Do not edit this section Unless you have to modify HTML structure of Playlist-->
+            <div class="rock_player pre_sticky">
+                <div class="sticky_player" id="playa" data-sticky="true">
+                    <div class="play_list">
+                        <div class="list_scroll mCustomScrollbar _mCS_1" ">
+                            <div class="container ">
+                                <ul class="music_widget player_data">
+                                    <li class="music_row_header">
+                                        <div class="column_one"> # </div>
+                                        <!--<div class="column_two">
+                                            &nbsp;
+                                        </div>-->
+                                        <div class="column_three"> Show name </div>
+                                        <div class="column_four"> Date</div>
+                                        <div class="column_six"> length </div>
+                                        <div class="column_seven">
+                                            &nbsp;<!--no header for play column-->
+                                        </div>
+                                        <div class="column_eight">
+                                            &nbsp;<!--no header for btn column-->
+                                        </div>
+                                    </li>
+                                    <!-- ko foreach: playlist -->
+                                    <li class="music_row">
+                                        <div class="column_one track_shownumber" data-bind="text: ShowNumber"></div>
+                                        <div class="column_three track_title" data-bind="text: ShowTitle"></div>
+                                        <div class="column_four track_date" data-bind="text: moment(DatePublished).format('MMMM DD, YYYY')"></div>
+                                        <div class="column_six track_length"><span data-bind="text: Minutes"></span> m</div>
+
+                                        <div class="column_seven"> <a class="play_it" href="#"><span class="fa fa-play" data-bind="tooltip: {title: 'play track', placement: 'top'}"></span></a> <a class="itunesLink" data-bind="href: DownloadUrl, tooltip: {title: 'download track', placement: 'top'}" target="_blank"><span class="fa fa-download"></span></a> </div>
+                                        <div class="column_eight"> <a class="btn btn_details btn_watch_video" href="#" data-target="#show_pop" data-backdrop="static" data-keyboard="false">show details</a> </div>
+                                    </li>
+                                    <!-- /ko -->
+
+                                </ul>
+                                <!--music_widget-->
+                            </div>
+                            <!--container-->
+                        </div>
+                    </div>
+
+                    <!--//=============================================================
+                    Playlist container and player wrapper elements
+                    ==============================================================-->
+                    <div class="jp-playlist hidden">
+                        <!--Add Songs In mp3 format here-->
+                        <ul class="playlist-files"></ul>
+                        <!--Playlist ends-->
+                    </div>
+                    <div class="container player_wrapper">
+                        <div class="row">
+                            <div id="player-instance" class="jp-jplayer"></div>
+                            <div class="jp-title audio-title marquee">loading...</div>
+                            <div class="hider fa fa-spinner fa-spin" id="audio-spinner"></div>
+                            <div class="rock_controls controls">
+                                <div class="fa fa-play jp-play"></div>
+                                <div class="fa fa-pause jp-pause"></div>
+                            </div>
+                            <!--controls-->
+                            <div class="audio-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="audio-play-bar jp-play-bar" style="width:20%;"></div>
+                                </div>
+                                <!--jp-seek-bar-->
+                            </div>
+                            <!--audio-progress-->
+                            <div class="audio-timer"> <span class="jp-current-time">01:02</span> </div>
+                            <div class="jp-volume">
+                                <ul>
+                                    <li class="active"><a href="#"></a></li>
+                                    <li class="active"><a href="#"></a></li>
+                                    <li class="active"><a href="#"></a></li>
+                                    <li class="active"><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                            <a href="#" class="playlist_expander fa fa-list-ol" data-bind="tooltip: {title: 'view playlist', placement: 'left'}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!--//banner-->
+        <!--=========================
+           Header
+          ===========================-->
+        <header>
+            <nav id="sticktop" class="navbar navbar-default" data-sticky="true">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                        <a class="navbar-brand" href="#"><img src="/Content/img/basic/logo2.png" alt="logo" /></a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#section_1">Latest Shows</a></li>
+                            <li><a href="#section_1" id="nav-tags">Tags</a></li>
+                            <li><a href="#section_3">Upcoming Shows</a></li>
+                            <li><a class="section_4" href="#section_4">Get Free Stuff!</a></li>
+                            <li><a href="#section_5">About</a></li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </nav>
+        </header>
+        <div class="sections_wrapper">
+
+
+
+
+
+
+
+            <!--======================================
+            Latest Shows Section
+            ==========================================-->
+            <section id="section_1" class="shows_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-9">
+                            <div class="section_head_widget">
+                                <h2><!--<span class="threedee">-->.NET ROCKS PODCAST<!--</span>--></h2>
+                                <h5>Latest Shows</h5>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" data-bind="value: search" id="search-box" placeholder="Search for...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default btn_search" type="button">Search</button>
+                                </span>
+                            </div><!-- /input-group -->
+                            <a href="#" class="btn_tags"><i class="fa fa-tags"></i>&nbsp;&nbsp;Tags Filter...</a>
+                        </div>
+                        <!--section_head_widget-->
+                    </div>
+                    <!--row-->
+
+                    <div class="shows_widget">
+
+                        <div data-bind="visible: search().length > 0 || filteredTags().length > 0" class="row">
+                            <div class="alert alert-warning col-xs-7 text-center" role="alert">
+                                <div data-bind="visible: search().length > 0">
+                                    Shows are currently filtered by <span class="primary_color" data-bind="text: search"></span>. &nbsp;&nbsp;<a href="#" class="label label-default clear-filter">Clear</a>
+                                </div>
+                                <div data-bind="visible: filteredTags().length > 0">
+                                    Tag filter:&nbsp;&nbsp;
+                                    <span data-bind="foreach: filteredTags">
+                                        <i class="fa fa-tag"></i>&nbsp;<span class="primary_color" data-bind="text: $data"></span>&nbsp;&nbsp;
+                                    </span>
+                                    &nbsp;&nbsp;<a href="#" class="label label-default clear-tags-filter">Deselect tags</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-xs-offset-2 text-center">
+                                <span data-bind="text: totalRecords"></span> show<span data-bind="if:totalRecords()!=1">s</span> found
+                            </div>
+                        </div>
+
+                        <div id="section_2" data-bind="visible: showTagsFilter" class="row">
+                            <div class="alert alert-warning col-xs-12" role="alert">
+                                <button type="button" id="btn_close_tags" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <span class="primary_color"><strong>Tags</strong></span>
+                                <p>
+                                    <div data-bind="foreach: tags">
+                                        <label class="checkbox-inline" data-bind="css: {'wheat-bg': $root.selectedTags.indexOf(Tag()) > -1}">
+                                            <input type="checkbox" data-bind="value: Tag(), checked: $root.selectedTags" style="margin:10px 3px 0 0;" /> <span data-bind="text: Tag()"></span>&nbsp;<span class="badge badge-light" data-bind="text: Number"></span>
+                                        </label>
+                                    </div>
+                                </p>
+                                <p>
+
+                                    <button class="btn btn-default btn_clear_filter" type="button" data-bind="enable: selectedTags().length > 0">Clear filter</button>&nbsp;&nbsp;
+                                    <button class="btn btn-primary btn_apply_filter" type="button" data-bind="enable: selectedTags().length > 0">Apply filter</button>
+                                    <button class="btn btn-default btn_close_filter pull-right" type="button"><i class="fa fa-close"></i>&nbsp;Close</button>
+                                    <button class="btn btn-default btn_create_rss pull-right" type="button"><i class="fa fa-rss"></i>&nbsp;Create RSS feed</button>&nbsp;&nbsp;
+                                    <button class="btn btn-default btn_copy_filter pull-right" data-trigger="manual" data-placement="bottom" title="Copy Filter" data-original-title="Copy Filter" tooltip="Copy Filter" type="button"><i class="fa fa-copy"></i>&nbsp;Copy filter</button>&nbsp;&nbsp;
+                                </p>
+                                <div class="copy-link-to-tags-container">
+                                    <p class="copy-link-to-tags-instructions">The URL for this tag filter is below. Copy it to easily share with others.</p>
+                                    <textarea type="text" id="tags-link" class="link-to-tags-destination js-initial-focus u-dir" dir="ltr" readonly=""></textarea>
+                                    <a class="btn btn-primary" role="button" id="copy-link-to-tags-close" href="#">Close</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="show_row_header">
+                            <div class="column_one"> Show </div>
+                            <div class="column_two"> Play / Add to Playlist </div>
+                            <div class="column_three"> Title</div>
+                            <div class="column_four"> Date </div>
+                            <div class="column_five"> Length </div>
+                            <div class="column_six"> Actions </div>
+
+                        </div>
+
+                        <div data-bind="visible: items().length > 0">
+                            <div data-bind="foreach: items">
+
+                                <div class="show_row">
+                                    <div>
+                                        <div class="column_one"> <span data-bind="text: ShowNumber"></span> </div>
+                                        <div class="column_two">
+                                            <a class="btn btn_play_track latest_shows_play_track" style="float:left;" href="#" data-bind="tooltip: {title: 'play track', placement: 'right'}"><span class="fa fa-play-circle"></span></a>&nbsp;
+                                            <a class="btn btn_play_track latest_shows_add_playlist" style="float:left;" href="#" data-bind="tooltip: {title: 'add to playlist', placement: 'right'}"><span class="fa fa-plus-square"></span></a>
+                                        </div>
+                                        <div class="column_three"><span data-bind="text: ShowTitle"></span> </div>
+                                        <div class="column_four"> <span data-bind="text: DisplayableDatePublished"></span> </div>
+                                        <div class="column_five"> <span data-bind="text: Minutes"></span> min </div>
+
+                                        <div class="column_six"> <a class="btn btn_details" href="#" data-target="#show_pop" data-backdrop="static" data-keyboard="false">show details</a> </div>
+                                    </div>
+                                </div>
+                                <!--show row-->
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-9">
+                                    <a class="btn btn_load_more" href="#" data-bind="visible: morePages"><span class="fa fa-angle-down"></span>&nbsp;&nbsp;Load More Shows</a>
+                                </div>
+                                <div class="col-sm-3">
+                                    <a class="btn btn_load_all" href="#" data-bind="visible: morePages"><span class="fa fa-angle-double-down"></span>&nbsp;&nbsp;Load All &nbsp;&nbsp;<span class="badge" data-bind="text: totalRecords"></span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="show_row" data-bind="visible: items().length === 0" style="padding:20px;background-color:#801010">
+                            <div style="">
+                                <h4>No shows found <span data-bind="if: search().length > 0">based on your search term "<span data-bind="text: search"></span>" &nbsp;&nbsp;<a href="#" class="label label-default clear-filter">Clear Filter</a></span></h4>
+                            </div>
+
+                        </div>
+
+                        <!--container-->
+                    </div>
+                </div>
+            </section>
+            <!--//Latest Shows-->
+            <!--================
+             Upcoming Shows Section
+            ====================-->
+            <section id="section_3" class="track_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="section_head_widget animatedParent">
+                                <h2 class="animated fadeInDown">.NET ROCKS PODCAST</h2>
+                                <h5 class="animated fadeInLeft">Upcoming Shows</h5>
+                            </div>
+                        </div>
+                        <!--column-->
+                    </div>
+                    <!--row-->
+                    <div class="row tracks_widget centered-container" data-bind="foreach: upcomingItems">
+                        <div class="col-sm-3 col-xs-12">
+                            <div class="track_box">
+                                <figure><img data-bind="src: $parent.upcomingShowImgUrlBase + ($index()+1) + '.jpg'" alt="" /></figure>
+                                <div class="track_info_wrapper">
+                                    <div class="news_info">
+                                        <h5><span data-bind="text: ShowTitle"></span></h5>
+                                        <ul class="news_meta">
+                                            <li>Show <span data-bind="text: ShowNumber"></span></li>
+                                        </ul>
+                                        <!--//news_meta-->
+                                        <h6><span data-bind="text: DisplayableDatePublished"></span></h6>
+                                    </div>
+                                    <!--track_info-->
+                                </div>
+                                <!--//track_info_wrapper-->
+                                <!--//hover-->
+                            </div>
+                            <!--//track_box-->
+                        </div>
+                        <!--column-->
+
+
+
+                    </div>
+                    <!-- Row -->
+                </div>
+                <!-- Container -->
+
+            </section>
+            <!--//Upcoming Shows-->
+            <!--================
+             Newsletter
+            ====================-->
+            <section id="section_4" class="newsletter_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <div class="team_prizes">
+                                <figure class="team_stand newsletter_form" data-sequence="400">
+
+                                    <div class="billboard">
+                                        <p><br /></p>
+                                        <h3 class="shadow">Have you joined our Fan Club Yet?</h3>
+                                        <h3 class="shadow">Join Today to Win Free Stuff!</h3>
+                                        <h2 class="shadow">Sign Up Now!</h2>
+                                        <p><br /></p>
+                                        <a href="https://survey.dotnetrocks.com/" class="btn btn-lg">Get Free Stuff!</a>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                        <div class="alert alert-info col-md-6 col-md-offset-3 text-center">
+                                            Already have an account? &nbsp;&nbsp;<a href="https://survey.dotnetrocks.com/Account/Login" class="label label-default">Sign in...</a>
+                                        </div>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                        <p><br /></p>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </figure>
+                                <div class="newsletter_form">
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--//Newsletter-->
+            <!--======================================
+            Parallax/About Us/Tweets Section
+            ==========================================-->
+            <div id="section_5" class="about_section">
+                <div class="billboard">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="section_head_widget">
+                                    <h1>About .NET Rocks!</h1>
+                                    <h4>What is this?</h4>
+                                </div>
+                            </div>
+                            <!--column-->
+                        </div>
+                        <!--row-->
+                    </div>
+                    <!--container-->
+                </div>
+                <!--parallax_inner-->
+            </div>
+            <!--//parallax-->
+            <!--======================================
+            About
+            ==========================================-->
+            <section id="section_13" class="about_section">
+                <div class="container">
+                    <div class="row">
+
+                    </div>
+                    <!--row-->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="text_widget">
+                                <p>
+                                    .NET Rocks! is a weekly talk show for anyone interested in programming on the Microsoft .NET platform. The shows range from introductory information to hardcore geekiness.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="team_widget">
+                            <div class="animatedParent">
+                                <div class="col-md-6 team_member">
+                                    <figure class="animated fadeInLeft" data-id="1">
+                                        <img src="/Content/img/team/Carl.jpg" alt="" />
+                                        <figcaption><a href="#">Carl Franklin</a></figcaption>
+                                    </figure>
+                                    <p>
+                                        Carl Franklin is Executive Vice President of<a href="http://appvnext.com/" target="_blank"> App vNext</a>, a software development firm focused on the latest methodologies and technologies. Carl is a 20+ year veteran of the software industry,
+                                        co-host and founder of<a href="http://dotnetrocks.com/"> .NET Rocks!</a>, the first and most widely listened to podcast for .NET developers, a<a href="https://mvp.microsoft.com/en-us/" target="_blank"> Microsoft MVP</a> for
+                                        <a href="http://kinectforwindows.com/" target="_blank">Kinect for Windows</a>, a Microsoft <a href="http://msrd.io/" target="_blank">Regional Director</a>, and Senior Executive of <a href="http://pwop.com/" target="_blank">Pwop Studios</a>,
+                                        a full-service audio and video production/post production studio located in Southeastern Connecticut.
+                                    </p>
+
+                                    <p>
+                                        He was awarded the MVP for Kinect because of his work on gesture recognition. Namely, <a href="https://github.com/carlfranklin/KinectToolsV2" target="_blank">KinectTools</a> and <a href="https://github.com/carlfranklin/GesturePak2V1" target="_blank">GesturePak</a>.
+                                        KinectTools is an abstraction over the Kinect 2.0 SDK that takes the detail work out of using the Kinect in a Windows application. GesturePak lets you record, edit, and recognize gestures in a Windows application. Both are free open source products.
+                                    </p>
+
+                                    <p>
+                                        Carl is also the creator of <a href="http://mtcb.pwop.com/" target="_blank">Music to Code By</a>, a set of 25-minute long instrumental music pieces designed to get you into a state of flow and keep you there. Music to Code By has been praised widely by
+                                        developers for keeping them focused and helping them solve difficult problems.
+                                    </p>
+
+                                    <p>
+                                        Carl has been a leader in the .NET community since 2002, and in the Visual Basic (VB) community before that. In the very early days he wrote for Visual Basic Programmer&rsquo;s Journal, authoring the Q&amp;A column of that magazine as well as many feature
+                                        articles for VBPJ and other magazines. He has authored two books for John Wiley &amp; Sons on sockets programming in VB, and in 1994 he helped create the very first web site for VB developers, Carl &amp; Gary&#39;s VB Home Page.
+                                    </p>
+
+                                    <p>Before he started .NET Rocks! in 2002 (three years before the word &lsquo;podcast&rsquo; became popular) he developed and taught hands-on training classes for VB.NET and ASP.NET via his training company, Franklins.Net.</p>
+
+                                    <p>
+                                        Carl has spoken regularly at conferences around the world, such as <a href="http://devintersection.com" target="_blank">DevIntersection</a>, <a href="http://ndcoslo.com/" target="_blank">NDC</a>, <a href="http://ndc-london.com/" target="_blank">NDC London</a>,
+                                        <a href="http://oredev.org/" target="_blank">OreDev</a>, Microsoft TechEd, Microsoft TechEd Europe, <a href="http://www.devteach.com/" target="_blank">DevTeach</a>, <a href="http://devreach.com/" target="_blank">DevReach</a>, and others.
+                                    </p>
+
+                                    <p>
+                                        In addition to his work in the development field, Carl works in the music business as a composer, recording engineer, producer, multi-instrumentalist, and vocalist. With his band, the <a href="http://franklinbros.com" target="_blank">Franklin Brothers</a>, he
+                                        has produced two albums, <a href="http://www.amazon.com/Lifeboat-To-Nowhere/dp/B005GNA54W/ref=sr_shvl_album_1?ie=UTF8&amp;qid=1313075380&amp;sr=301-1" target="_blank">Lifeboat to Nowhere</a> and <a href="http://carlfranklin.com" target="_blank">Been a While</a>.
+                                        Both albums get nothing but five star reviews. Noted guitar virtuoso <a href="http://johnscofield.com" target="_blank">John Scofield</a> has collaborated with Carl on two songs, <a href="https://www.youtube.com/watch?v=mHHkxVgcZq0" target="_blank">Chain Reaction</a>
+                                        and <a href="https://www.youtube.com/watch?v=zkoY0YIVJZk" target="_blank">Groove or Get Out of the Way</a>.
+                                    </p>
+
+
+                                    <p>
+
+                                        <div class="container">
+                                            <ul class="channels_list row animatedParent ">
+                                                <li class="col-md-4 col-md-offset-1 animated fadeInLeft"><a href="http://twitter.com/#!/carlfranklin" target="_blank"><i class="fa fa-circular fa-twitter"></i>Follow Carl</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </p>
+
+
+                                </div>
+                                <div class="col-md-6 team_member">
+                                    <figure class="animated fadeInRight" data-id="1">
+                                        <img src="/Content/img/team/Richard.jpg" alt="" />
+                                        <figcaption><a href="#">Richard Campbell</a></figcaption>
+                                    </figure>
+                                    <p>Richard Campbell started playing with microcomputers in 1977 at the age of 10. He&#39;s really never done anything else since. In that time he&#39;s been involved in every level of the PC industry, from manufacturing, to sales, to development, and into large scale infrastructure implementation. He has been a witness and participant to the Bill Gates vision of &quot;A PC on every desktop.&quot;</p>
+                                    <p>For years he&#39;s served as a consultant to companies in many countries, including Barnes&amp;Noble.com, Dow Chemical, Johnson &amp; Johnson Health Care Services, Reuters, Subaru/Isuzu and the U.S. Air Force, providing advice on architecture, scaling systems and mentoring development teams. His long experience in working with large scale systems made him a sought-after consultant during the halycon years of the DotCom boom. He worked closely with venture capital and private equity firms providing architectural guidance and due diligence.</p>
+                                    <p>He is a Microsoft Regional Director and is recognized as a Microsoft Most Valuable Professional (MVP) in the area of<a href="http://asp.net/" target="_blank">ASP.NET</a>&nbsp;development.</p>
+                                    <p>In 2004 Richard first met Carl Franklin, creator of .NET Rocks (<a href="http://www.dotnetrocks.com/" target="_blank">www.dotnetrocks.com</a>), The Internet Audio Talkshow for .NET Developers. Richard was a guest on show 69, but his friendship with Carl quickly evolved into a partnership and by show 100 in early 2005 he came onboard as co-host. In 2007 he started RunAs Radio (<a href="http://www.runasradio.com/" target="_blank">www.runasradio.com</a>), a podcast for IT Professionals.</p>
+                                    <p>He is a co-founder of Strangeloop Networks, which was acquired by Radware in 2013 and spent five years on the board of directors of Telerik which was acquired by Progress Software in 2014.</p>
+                                    <p>In 2012 Richard founded the Humanitarian Toolbox (<a href="http://www.htbox.org/" target="_blank">www.htbox.org</a>), an organization designed to let developers around the world donate their skills to disaster relief organizations by building open source software. By 2014, Humanitarian Toolbox became a 501(c)3 registered US charity, working on a number of different projects for the United Nations, US Center for Disease Control and Red Cross.</p>
+                                    <p>Today Richard is a consultant and advisor to a number of successful technology firms as well as the co-owner and content planner of the DevIntersection (<a href="http://www.devintersection.com/" target="_blank">www.devintersection.com</a>) group of conferences.</p>
+                                    <p>
+
+                                        <div class="container">
+                                            <ul class="channels_list row animatedParent ">
+                                                <li class="col-md-4 col-md-offset-1 animated fadeInLeft"><a href="http://twitter.com/#!/richcampbell" target="_blank"><i class="fa fa-circular fa-twitter"></i>Follow Richard</a></li>
+                                            </ul>
+                                        </div>
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--container-->
+            </section>
+            <!--//About Us-->
+            <!--=====================================
+            Modal Show Info
+            ==========================================-->
+            <div class="modal fade" id="show_pop" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                    </div>
+                </div>
+            </div>
+            <!--//Modal Show Info-->
+            <!--=====================================
+            Modal RSS
+            ==========================================-->
+            <div class="modal fade" id="rss_pop" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h3 style="margin-right:30px;"><span class="primary_color"><i class="fa fa-rss"></i>&nbsp;</span><span style="color:#000;">Personalized Feed</span></h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article_popup container">
+                                <p>
+                                    <h5 class="primary_color">Make your selection</h5>
+                                </p>
+                                <p>
+                                    .NET Rocks! allows you to create your own personalized RSS feed. Get the latest shows announcements tailored to your liking!<br />
+
+                                </p>
+                                <div class="alert alert-info col-xs-12" role="alert">
+                                    <span class="primary_color"><strong>Tags</strong></span>
+                                    <p>
+                                        <div data-bind="foreach: tags">
+                                            <label class="checkbox-inline" data-bind="css: {'wheat-bg': $root.selectedRSSTags.indexOf(Tag()) > -1}">
+                                                <input type="checkbox" data-bind="value: Tag(), checked: $root.selectedRSSTags" style="margin:6px 3px 0 0;" /> <span data-bind="text: Tag()"></span>&nbsp;<span class="badge badge-light" data-bind="text: Number"></span>
+                                            </label>
+                                        </div>
+                                    </p>
+                                    <p>
+                                        <button class="btn btn-primary btn_apply_filter" type="button" data-bind="enable: selectedRSSTags().length > 0">Create my feed</button>&nbsp;&nbsp;
+                                        <button class="btn btn-default btn_master_feed" type="button">Master Feed (all episodes)</button>
+                                    </p>
+                                </div>
+                                <div id="custom-rss-link" style="display:none;" class="alert alert-warning" role="alert"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Modal RSS-->
+            <!--=====================================
+            Modal Contact
+            ==========================================-->
+            <div class="modal fade" id="contact_pop" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h3 style="margin-right:30px;"><span class="primary_color"><i class="fa fa-envelope"></i>&nbsp;</span><span style="color:#000;">Contact Us</span></h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article_popup container">
+                                <p>
+                                    <h5 class="primary_color">Contact us today!</h5>
+                                </p>
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-offset-1 primary_color">
+                                        <strong>Phone</strong>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        (860) 447-9610
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-offset-1 primary_color">
+                                        <strong>Toll Free</strong>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        (877) 273-4838
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-offset-1 primary_color">
+                                        <strong>Fax</strong>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        (860) 447-9612
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-offset-1 primary_color">
+                                        <strong>Email</strong>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <a href="mailto:dotnetrocks@franklins.net">dotnetrocks@franklins.net</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3 col-xs-offset-1 primary_color">
+                                        <strong>Mailing Address</strong>
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <address>
+                                            302 State St. Ste 513<br />
+                                            New London, CT<br />
+                                            06320, USA
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Modal Contact-->
+            <!--=====================================
+            Modal Apps
+            ==========================================-->
+            <div class="modal fade" id="apps_pop" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h3 style="margin-right:30px;"><span class="primary_color"><i class="fa fa-mobile"></i>&nbsp;</span><span style="color:#000;">Get the App</span></h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article_popup container">
+                                <p>
+                                    <h5 class="primary_color">Select your platform</h5>
+                                </p>
+                                <p>
+                                    Take .NET Rocks! on the road! The mobile app keeps track of your show progress, as well as where you left off during your last listening session.
+                                </p>
+                                <div class="row centered">
+                                    <div class="col-xs-1 col-xs-offset-2" style="font-size:2.5em">
+                                        <a href="https://itunes.apple.com/us/app/.net-rocks/id586655702?mt=8&ign-mpt=uo%3D4" target="_blank"><i class="fa fa-apple"></i></a>
+                                    </div>
+                                    <div class="col-xs-1 col-xs-offset-2" style="font-size:2.5em">
+                                        <a href="https://play.google.com/store/apps/details?id=com.diatomenterprises.dotnetrocks" target="_blank"><i class="fa fa-android"></i></a>
+                                    </div>
+                                    <div class="col-xs-1 col-xs-offset-2" style="font-size:2.5em">
+                                        <a href="http://www.windowsphone.com/en-us/store/app/net-rocks/e8aa85df-e9b9-4117-87af-b5c292df3bec" target="_blank"><i class="fa fa-windows"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Modal Apps-->
+            <!--=====================================
+            Modal Stream
+            ==========================================-->
+            <div class="modal fade" id="stream_pop" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h3 style="margin-right:30px;"><span class="primary_color"><i class="fa fa-headphones"></i>&nbsp;</span><span style="color:#000;">Stream Shows</span></h3>
+                        </div>
+                        <div class="modal-body">
+                            <div class="article_popup container">
+                                <p>
+                                    <h5 class="primary_color">Select your streaming option</h5>
+                                </p>
+                                <p>
+                                    .NET Rocks! offers many different ways to listen to our weekly shows. Of course you may listen on this site at any time, but you may also
+                                    play our shows from one of the following services:
+                                </p>
+                                <div class="row centered">
+                                    <div class="col-xs-1 col-xs-offset-3" style="font-size:2.5em">
+                                        <a class="btn btn-lg btn-xl btn-primary" href="zune://subscribe/?.NET%20Rocks!%20The%20Internet%20Audio%20Talk%20Show%20for%20.NET%20Developers=http://www.pwop.com/feed.aspx?show=dotnetrocks&filetype=master" target="_blank">Zune</a>
+                                    </div>
+                                    <div class="col-xs-1 col-xs-offset-3" style="font-size:2.5em">
+                                        <a class="btn btn-lg btn-xl btn-primary" href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=130068596" target="_blank">iTunes</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//Modal Stream-->
+
+            <div id="disqus_thread" style="display:none"></div>
+
+            <!--======================================
+            Footer
+            ==========================================-->
+
+            <footer id="section_13" class="footer">
+                <div class="billboard">
+                    <div class="container">
+                        <ul class="channels_list row animatedParent" data-sequence="50">
+                            <li class="col-xs-12 col-sm-4 animated fadeInLeftShort" data-id="1" id="footer-rss"> <a href="#"><i class="fa fa-circular fa-rss-square"></i>DNR RSS Feed</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInLeftShort" data-id="2" id="footer-stream"> <a href="#"><i class="fa fa-circular fa-headphones"></i>Stream</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInLeftShort" data-id="3" id="footer-apps"><a href="#"><i class="fa fa-circular fa-mobile"></i>Get the App</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInRightShort" data-id="4" id="footer-contact"> <a href="#"><i class="fa fa-circular fa-envelope"></i>Contact Us</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInRightShort" data-id="5"> <a href="https://survey-dotnetrocks.azurewebsites.net/"><i class="fa fa-circular fa-user-plus"></i>Join</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInRightShort" data-id="6"> <a href="http://www.cafepress.com/dotnetrocks" target="_blank"><i class="fa fa-circular fa-shopping-cart"></i>DNR store</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInLeftShort" data-id="7"> <a href="https://twitter.com/carlfranklin" target="_blank"><i class="fa fa-circular fa-twitter"></i>Follow us on twitter</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInLeftShort" data-id="8"> <a href="https://www.facebook.com/dotnetrocks" target="_blank"><i class="fa fa-circular fa-facebook"></i>Fan on Facebook</a></li>
+                            <li class="col-xs-12 col-sm-4 animated fadeInLeftShort" data-id="9"> <a href="https://plus.google.com/100717985718926108098" target="_blank"><i class="fa fa-circular fa-google-plus"></i>Google+</a></li>
+                        </ul>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="copyrights">&copy; 2016 <a href="http://www.dotnetrocks.com">.NET Rocks!</a> &nbsp;|&nbsp; Website by <a href="http://www.appvnext.com" target="_blank">App vNext</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--container-->
+                </div>
+                <!--parallax_inner-->
+            </footer>
+            <!--//parallax-->
+        </div>
+    </div>
+    <!--===================================================================
+    Scripts
+    ====================================================================-->
+    <script src="/bundles/functionality?v=t61aWSXX4zODoFWL9x9QRevBUaWzG_V78Mio3si7tDo1"></script>
+
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            com.dotnetrocks.vars.app_base = 'https://www.dotnetrocks.com';
+            //var showNum = com.dotnetrocks.vars.getQueryString("show");
+            //if (showNum != null && showNum != '') {
+            //    com.dotnetrocks.showviewModel.showDetailsFromId(showNum);
+            //}
+        });
+
+        $('body').jpreLoader({
+            splashID: "#jSplash",
+            loaderVPos: '50%',
+            autoClose: true,
+        });
+        /*====================================================================
+        Google Tracker Code here
+        ===================================================================*/
+    </script>
+
+    <script src="/bundles/app?v=k0FSxe-vKLkwIPWfCLmAehcqiiZzb3jq-YvzCIK4x801"></script>
+
+    <script type="text/javascript">
+        // Disable backdrop.
+        //if (jQuery.usingSafari(false)) {
+        //    document.write('<style>div.modal-backdrop{ display:none; }</style>');
+        //}
+
+        /* * * CONFIGURE RAYGUN * * */
+        // Enable IE8 to submit errors (allowInsecureSubmissions)
+        //Raygun.init('u7Msdr+2rP4XYSET61dfLQ==', {
+        //    allowInsecureSubmissions: true,
+        //    ignore3rdPartyErrors: true
+        //}).whitelistCrossOriginDomains(["dotnetrocks.com"]).attach();
+        rg4js('apiKey', 'u7Msdr+2rP4XYSET61dfLQ==');
+        rg4js('enableCrashReporting', true);
+        rg4js('allowInsecureSubmissions', true);
+        rg4js('ignore3rdPartyErrors', true);
+        rg4js('enablePulse', true);
+
+        /* * * CONFIGURE DISQUS * * */
+        var disqus_shortname = 'dotnetrocks';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+
+        /* * * Disqus Reset Function * * */
+        com.dotnetrocks.vars.d_reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
+            DISQUS.reset({
+                reload: true,
+                config: function () {
+                    this.page.identifier = newIdentifier;
+                    this.page.url = newUrl;
+                    this.page.title = newTitle;
+                    this.language = newLanguage;
+                }
+            });
+        };
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-43059672-1', 'dotnetrocks.com');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
