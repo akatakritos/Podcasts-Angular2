@@ -35,6 +35,10 @@ namespace Podcasts.Web
                 url: "podcasts/new",
                 defaults: new { controller = "Podcast", action = nameof(PodcastController.New) });
 
+            routes.MapRoute(
+                name: "Feed",
+                url: "feed",
+                defaults: new { controller = "Feed", action = nameof(FeedController.GetFeed) });
         }
     }
 }
