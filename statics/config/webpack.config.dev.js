@@ -8,7 +8,7 @@ var paths = require('./paths');
 module.exports = {
   devtool: 'eval',
   entry: [
-    require.resolve('webpack-dev-server/client') + '?/',
+    require.resolve('webpack-dev-server/client') + '?http://localhost:3000/',
     require.resolve('webpack/hot/dev-server'),
     require.resolve('./polyfills'),
     path.join(paths.appSrc, 'index')
@@ -18,7 +18,7 @@ module.exports = {
     path: paths.appBuild,
     pathinfo: true,
     filename: 'static/js/bundle.js',
-    publicPath: '/'
+    publicPath: 'http://localhost:3000/'
   },
   resolve: {
     extensions: ['', '.js', '.jsx','.json'],

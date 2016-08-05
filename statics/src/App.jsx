@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class App extends Component {
   render() {
@@ -11,13 +12,13 @@ class App extends Component {
                         <span className="icon-bar"></span>
                         <span className="icon-bar"></span>
                     </button>
-                    <a href="/" className="navbar-brand">Podcasts</a>
+                    <Link to="/" className="navbar-brand">Podcasts</Link>
                 </div>
                 <div className="navbar-collapse collapse">
                     <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li className="active"><Link to="/">Home</Link></li>
+                        <li><Link to="/about">About</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
                     </ul>
                 </div>
             </div>

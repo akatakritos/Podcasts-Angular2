@@ -64,6 +64,7 @@
     <Compile Include="Services\MetadataParser.cs" />
     <Compile Include="Services\PageDownloader.cs" />
     <Compile Include="Services\PodcastFeed.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

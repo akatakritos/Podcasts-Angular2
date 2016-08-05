@@ -149,7 +149,7 @@ function runDevServer(port) {
     quiet: true,
     watchOptions: {
       ignored: /node_modules/
-    }
+    },
   }).listen(port, (err, result) => {
     if (err) {
       return console.log(err);

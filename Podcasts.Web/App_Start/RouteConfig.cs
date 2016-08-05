@@ -16,6 +16,11 @@ namespace Podcasts.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Main",
+                url: "",
+                defaults: new { controller = "Home", action = nameof(HomeController.Home) });
+
+            routes.MapRoute(
                 name: "Feed",
                 url: "feed",
                 defaults: new { controller = "Feed", action = nameof(FeedController.GetFeed) });
