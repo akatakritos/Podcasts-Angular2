@@ -4,8 +4,6 @@ import { reduxForm } from 'redux-form';
 const EditPodcastForm = React.createClass({
 
     render: function() {
-        console.log(this.props);
-
         const { fields: { title, url, description}, handleSubmit } = this.props;
 
         return (

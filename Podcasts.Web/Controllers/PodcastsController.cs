@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Http;
 
 using Podcasts.Core;
@@ -28,12 +31,27 @@ namespace Podcasts.Web.Controllers
             return podcasts;
         }
 
-        public void Post([FromBody]string value)
+        public async Task<Podcast> Post([FromBody]Podcast podcast)
         {
+            if (podcast.PodcastId != 0)
+            {
+                throw new HttpResponseException(Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Can't create a podcast when podcastId is provided"));
+            }
+
+            _context.Podcasts.Add(podcast);
+            await _context.SaveChangesAsync();
+
+            return podcast;
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
+            var p = await _context.Podcasts.FindAsync(id);
+            if (p == null)
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+
+            _context.Podcasts.Remove(p);
+            await _context.SaveChangesAsync();
         }
     }
 }

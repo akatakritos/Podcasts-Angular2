@@ -8,6 +8,10 @@ const PodcastList = React.createClass({
 
     render: function() {
         console.log('props', this.props);
+        if (this.props.loading) {
+            return ( <div>Loading...</div> );
+        }
+
         return (
             <table className="table">
                 <thead>
@@ -29,7 +33,7 @@ const PodcastList = React.createClass({
 function mapStateToProps(state) {
     return {
         podcasts: state.podcasts.get('podcasts'),
-        saving: state.podcasts.get('saving')
+        loading: state.podcasts.get('loading')
     }
 }
 

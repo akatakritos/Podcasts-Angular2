@@ -1,5 +1,7 @@
 import { push } from 'react-router-redux';
-import { fromJS } from 'immutable';
+import * as api from './podcast_api';
+
+console.log(api);
 
 export function setPodcasts(podcasts) {
     return {
@@ -21,27 +23,43 @@ function endSavePodcast(podcast) {
     }
 }
 
-function post(url, podcast) {
-    console.log('post', url, podcast);
-    return new Promise(function(resolve, reject) {
-
-        setTimeout(() => resolve(fromJS(podcast)), 1000);
-
-    });
-}
 
 export function savePodcast(form) {
     return dispatch => {
         dispatch(startSavePodcast());
 
-        return post('/api/podcats', form)
+        return api.savePodcast(form)
             .then(podcast => {
-                console.log('then', podcast);
                 dispatch(endSavePodcast(podcast));
                 dispatch(push('/'));
             })
             .catch(() => {
                 dispatch(endSavePodcast());
             })
+    }
+}
+
+function loading() {
+    return {
+        type: 'PODCASTS_LOADING'
+    }
+}
+
+function endLoading() {
+    return {
+        type: 'PODCASTS_LOADED'
+    }
+}
+
+export function loadPodcasts() {
+    return dispatch => {
+        dispatch(loading());
+
+        return api.getPodcasts()
+            .then(podcasts => {
+                dispatch(setPodcasts(podcasts));
+                dispatch(endLoading())
+            })
+            .catch(() => dispatch(endLoading()));
     }
 }
