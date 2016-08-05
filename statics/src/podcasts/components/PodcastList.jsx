@@ -28,7 +28,8 @@ const PodcastList = React.createClass({
 
 function mapStateToProps(state) {
     return {
-        podcasts: state.podcasts
+        podcasts: state.podcasts.get('podcasts'),
+        saving: state.podcasts.get('saving')
     }
 }
 
