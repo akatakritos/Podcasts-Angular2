@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>React App</title>
-    @if (!Settings.IsDevelopment)
+    @if (!Settings.UseWebpackDevServer)
     {
         <link rel="stylesheet" href="/static/css/main.css"/>
     }
@@ -13,10 +13,12 @@
 </head>
 <body>
     <div id="app"></div>
+
     @RenderBody()
-    @if (Settings.IsDevelopment)
+
+    @if (Settings.UseWebpackDevServer)
     {
-        <script type="text/javascript" src="http://localhost:3000/static/js/bundle.js"></script>
+        <script type="text/javascript" src="@Settings.WebpackDevServerUrl"></script>
     }
     else
     {
