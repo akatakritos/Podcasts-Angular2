@@ -8,7 +8,7 @@ export const PodcastListing = React.createClass({
         return (
             <tr>
                 <td>{this.props.title}</td>
-                <td><button className='btn btn-danger'>Delete</button></td>
+                <td><button className='btn btn-danger' disabled={this.props.deleting} onClick={this.props.delete}>Delete</button></td>
             </tr>
         )
     }

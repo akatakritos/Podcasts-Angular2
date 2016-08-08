@@ -2,9 +2,14 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {PodcastListing} from './PodcastListing';
 import {connect} from 'react-redux';
+import * as actionCreators from '../podcasts_actions';
 
 const PodcastList = React.createClass({
     mixins: [PureRenderMixin],
+
+    isDeleting: function(id) {
+            return this.props.deleting == id;
+    },
 
     render: function() {
         console.log('props', this.props);
@@ -22,7 +27,7 @@ const PodcastList = React.createClass({
                 </thead>
                 <tbody>
                     {this.props.podcasts.map(p =>
-                        <PodcastListing title={p.get('title')} key={p.get('id')}/>
+                        <PodcastListing title={p.get('title')} key={p.get('id')} deleting={this.isDeleting(p.get('id'))} delete={this.props.deletePodcast.bind(undefined, p.get('id'))} />
                     )}
                 </tbody>
             </table>
@@ -33,8 +38,9 @@ const PodcastList = React.createClass({
 function mapStateToProps(state) {
     return {
         podcasts: state.podcasts.get('podcasts'),
-        loading: state.podcasts.get('loading')
+        loading: state.podcasts.get('loading'),
+        deleting: state.podcasts.get('deleting')
     }
 }
 
-export const PodcastListContainer = connect(mapStateToProps)(PodcastList);
+export const PodcastListContainer = connect(mapStateToProps, actionCreators)(PodcastList);

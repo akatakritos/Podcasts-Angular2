@@ -51,6 +51,37 @@ function endLoading() {
     }
 }
 
+function startDeleting(id) {
+    return {
+        type: 'PODCAST_DELETING',
+        id
+    }
+}
+
+function endDeleting(id) {
+    return {
+        type: 'PODCAST_DELETED',
+        id
+    }
+}
+
+function failedDeleting(id) {
+    return {
+        type: 'PODCAST_FAILEDDELETING',
+        id
+    }
+}
+
+export function deletePodcast(id) {
+    return dispatch => {
+        dispatch(startDeleting(id));
+
+        return api.deletePodcast(id)
+            .then(() => dispatch(endDeleting(id)))
+            .catch(() => dispatch(failedDeleting(id)))
+    }
+}
+
 export function loadPodcasts() {
     return dispatch => {
         dispatch(loading());

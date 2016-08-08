@@ -12,7 +12,7 @@ import {Router,Route,hashHistory} from 'react-router';
 import createLogger from 'redux-logger';
 import { routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
-import Immutable, { fromJS } from 'immutable';
+import Immutable from 'immutable';
 
 const logger = createLogger({
   stateTransformer: (state) => {

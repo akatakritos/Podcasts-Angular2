@@ -20,6 +20,12 @@ export function getPodcasts() {
         .then(json => fromJS(json.map(fromApiModel)));
 }
 
+export function deletePodcast(id) {
+    return fetch(`/api/podcasts/${id}`, {
+        method: 'DELETE'
+    });
+}
+
 function toApiModel(json) {
     return {
         podcastId: json.id,
