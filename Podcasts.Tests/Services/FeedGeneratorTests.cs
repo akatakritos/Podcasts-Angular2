@@ -53,5 +53,22 @@ namespace Podcasts.Tests.Services
                 .Element("title").Value;
             Check.That(name).IsEqualTo(feed.Episodes.First().Title);
         }
+
+        [Fact]
+        public void ProperNesting()
+        {
+            feed.Episodes = new List<Podcast>()
+            {
+                new Podcast() { Title = "Episode 1", Description = "Episode 1 Description", DownloadUrl = "http://example.com/test.mp3" },
+                new Podcast() { Title = "Episode 2", Description = "Episode 2 Description", DownloadUrl = "http://example.com/test2.mp3" }
+            };
+
+            var rss = FeedGenerator.GenerateAsString(feed);
+            _output.WriteLine(rss);
+
+            var doc = XDocument.Parse(rss);
+            var titles = doc.XPathSelectElements("/rss/channel/item").Select(e => e.Element("title").Value);
+            Check.That(titles).ContainsExactly("Episode 1", "Episode 2");
+        }
     }
 }

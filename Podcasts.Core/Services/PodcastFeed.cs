@@ -47,6 +47,7 @@ namespace Podcasts.Core.Services
             foreach (var ep in feed.Episodes)
             {
                 writer.WriteStartElement("item");
+
                 writer.WriteElementString("title", ep.Title);
                 writer.WriteElementString("link", ep.DownloadUrl);
                 writer.WriteElementString("guid", ep.DownloadUrl);
@@ -54,11 +55,13 @@ namespace Podcasts.Core.Services
 
                 writer.WriteStartElement("enclosure");
                 writer.WriteAttributeString("url", ep.DownloadUrl);
-                writer.WriteEndElement();
+                writer.WriteEndElement(); //</enclosure>
+
+                writer.WriteEndElement(); //</item>
             }
 
-            writer.WriteEndElement();
-            writer.WriteEndElement();
+            writer.WriteEndElement(); // </channel>
+            writer.WriteEndElement(); // </rss>
             writer.WriteEndDocument();
 
             writer.Flush();
