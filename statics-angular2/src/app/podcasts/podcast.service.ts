@@ -59,4 +59,10 @@ export class PodcastService {
             .then(PodcastDto.toPodcast);
     }
 
+    delete(podcast: Podcast) : Promise<void> {
+        return this.http.delete(this.apiRoot + "podcasts/" + podcast.id)
+            .toPromise()
+            .then(() => null)
+    }
+
 }

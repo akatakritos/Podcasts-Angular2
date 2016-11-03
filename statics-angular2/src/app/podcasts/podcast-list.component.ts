@@ -22,4 +22,11 @@ export class PodcastListComponent implements OnInit {
 
     }
 
+    delete(podcast : Podcast) : void {
+        this.podcastService.delete(podcast)
+            .then(() => {
+                this.podcasts = this.podcasts.filter(p => p !== podcast)
+            });
+    }
+
 }
