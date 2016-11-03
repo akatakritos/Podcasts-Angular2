@@ -1,3 +1,8 @@
 .nav-bar-space {
     margin-top: 65px;
 }
+
+.action-cell {
+    min-width: 178px;
+    display: inline-block;
+}

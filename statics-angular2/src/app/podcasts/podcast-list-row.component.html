@@ -1,4 +1,8 @@
     <td>{{podcast.title}}</td>
     <td>
-        <button class="btn btn-danger" (click)="delete()" [disabled]="deleting">Delete</button>
+        <span class="action-cell">
+            <button class="btn btn-danger" *ngIf="!confirming" (click)="confirmDelete()" [disabled]="deleting">Delete</button>
+            <button class="btn btn-danger" *ngIf="confirming" (click)="delete()">I'm Sure</button>
+            <button class="btn btn-primary" *ngIf="confirming" (click)="cancelDelete()">Nevermind</button>
+        </span>
     </td>

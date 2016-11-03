@@ -22,6 +22,15 @@ export class PodcastListRowComponent {
     deleted = new EventEmitter();
 
     deleting = false;
+    confirming = false;
+
+    confirmDelete() : void {
+        this.confirming = true;
+    }
+
+    cancelDelete() : void {
+        this.confirming = false;
+    }
 
     delete() : void {
 
