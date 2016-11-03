@@ -9,9 +9,6 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let podcast of podcasts">
-            <td>{{podcast.title}}</td>
-            <td><button class="btn btn-danger" (click)="delete(podcast)">Delete</button></td>
-        </tr>
+        <tr podcast-list-row *ngFor="let podcast of podcasts" [podcast]="podcast" (deleted)="deleted(podcast)"></tr>
     </tbody>
 </table>

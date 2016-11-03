@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { PodcastListComponent } from './podcast-list.component';
 import { PodcastEditComponent } from './podcast-edit.component';
+import { PodcastListRowComponent } from './podcast-list-row.component';
 import { PodcastService } from './podcast.service';
 import { PodcastRoutingModule } from './podcast-routing.module';
 
@@ -17,7 +18,8 @@ import { PodcastRoutingModule } from './podcast-routing.module';
     ],
     declarations: [
         PodcastListComponent,
-        PodcastEditComponent
+        PodcastEditComponent,
+        PodcastListRowComponent
     ],
     exports: [
     ],
