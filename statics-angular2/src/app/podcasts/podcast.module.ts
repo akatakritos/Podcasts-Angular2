@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 import { PodcastListComponent } from './podcast-list.component';
+import { PodcastEditComponent } from './podcast-edit.component';
 import { PodcastService } from './podcast.service';
 import { PodcastRoutingModule } from './podcast-routing.module';
 
@@ -10,13 +12,14 @@ import { PodcastRoutingModule } from './podcast-routing.module';
     imports: [
         HttpModule,
         CommonModule,
+        FormsModule,
         PodcastRoutingModule
     ],
     declarations: [
-        PodcastListComponent
+        PodcastListComponent,
+        PodcastEditComponent
     ],
     exports: [
-        PodcastListComponent
     ],
     providers: [
         PodcastService

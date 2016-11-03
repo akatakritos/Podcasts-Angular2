@@ -10,10 +10,12 @@
     @if (Settings.UseWebpackDevServer)
     {
         <link href="@(Settings.WebpackDevServerRoot)/vendor.css" rel="stylesheet">
+        <link href="@(Settings.WebpackDevServerRoot)/app.css" rel="stylesheet">
     }
     else
     {
         <link href="static/css/vendor.css" rel="stylesheet">
+        <link href="static/css/app.css" rel="stylesheet"/>
     }
 </head>
 <body>

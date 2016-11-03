@@ -18,6 +18,15 @@ class PodcastDto {
             description: dto.description
         };
     }
+
+    static fromPodcast(podcast : Podcast) : PodcastDto {
+        return {
+            podcastId: podcast.id,
+            downloadUrl: podcast.url,
+            title: podcast.title,
+            description: podcast.description
+        };
+    }
 }
 
 @Injectable()
@@ -32,10 +41,22 @@ export class PodcastService {
     private apiRoot = "/api/"
 
     getPodcasts() : Promise<Podcast[]> {
-        return this.http.get(this.apiRoot + '/podcasts')
+        return this.http.get(this.apiRoot + 'podcasts')
             .toPromise()
             .then(response => response.json() as PodcastDto[])
             .then(dtos => dtos.map(PodcastDto.toPodcast));
+    }
+
+    save(podcast : Podcast) : Promise<Podcast> {
+        const headers = new Headers({
+            'Content-Type': 'application/json',
+            'Accept' : 'application/json'
+        });
+
+        return this.http.post(this.apiRoot + 'podcasts', JSON.stringify(PodcastDto.fromPodcast(podcast)), { headers })
+            .toPromise()
+            .then(response => response.json() as PodcastDto)
+            .then(PodcastDto.toPodcast);
     }
 
 }

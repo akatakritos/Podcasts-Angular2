@@ -4,8 +4,7 @@ import { Podcast } from './podcast';
 import { PodcastService } from './podcast.service';
 
 @Component({
-    templateUrl: 'podcast-list.component.html',
-    selector: 'podcast-list'
+    templateUrl: 'podcast-list.component.html'
 })
 export class PodcastListComponent implements OnInit {
 
