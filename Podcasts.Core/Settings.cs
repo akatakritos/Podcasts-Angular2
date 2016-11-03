@@ -16,7 +16,7 @@ namespace Podcasts.Core
 
         public static bool UseWebpackDevServer => IsDevelopment && "true".Equals(ConfigurationManager.AppSettings["UseWebpackDevServer"], StringComparison.InvariantCultureIgnoreCase);
 
-        public static string WebpackDevServerUrl => ConfigurationManager.AppSettings["WebpackDevServerUrl"];
+        public static string WebpackDevServerRoot => ConfigurationManager.AppSettings["WebpackDevServerRoot"];
 
         private static T ParseEnum<T>(string s)
         {
@@ -25,6 +25,7 @@ namespace Podcasts.Core
 
             return (T)Enum.Parse(typeof(T), s, ignoreCase: true);
         }
+
     }
 
     public enum RuntimeEnvironment

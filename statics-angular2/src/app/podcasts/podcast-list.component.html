@@ -1,0 +1,14 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let podcast of podcasts">
+            <td>{{podcast.title}}</td>
+            <td><button class="btn btn-danger" disabled>Delete</button></td>
+        </tr>
+    </tbody>
+</table>
