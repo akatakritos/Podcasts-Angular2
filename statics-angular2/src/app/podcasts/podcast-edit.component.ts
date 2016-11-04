@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+import { Title } from '@angular/platform-browser';
 
 import { Podcast } from './podcast';
 import { PodcastService } from './podcast.service';
@@ -11,7 +13,9 @@ export class PodcastEditComponent implements OnInit {
 
     constructor(
         private podcastService : PodcastService,
-        private router : Router
+        private router : Router,
+        private location : Location,
+        private titleService: Title
     ) {
 
     }
@@ -20,6 +24,7 @@ export class PodcastEditComponent implements OnInit {
 
     ngOnInit() : void {
 
+        this.titleService.setTitle("Create Podcast");
         this.podcast = new Podcast();
 
     }
@@ -27,5 +32,9 @@ export class PodcastEditComponent implements OnInit {
     save(podcast : Podcast) : void {
         this.podcastService.save(podcast)
             .then(() => this.router.navigate(['podcasts']));
+    }
+
+    back() : void {
+        this.location.back();
     }
 }
