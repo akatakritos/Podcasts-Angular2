@@ -226,9 +226,13 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="static\css\main.css" />
-    <Content Include="static\js\main.js" />
-    <Content Include="static\media\glyphicons-halflings-regular.svg" />
+    <Content Include="static\app.min.css" />
+    <Content Include="static\app.min.js" />
+    <Content Include="static\assets\glyphicons-halflings-regular.svg" />
+    <Content Include="static\index.html" />
+    <Content Include="static\polyfills.min.js" />
+    <Content Include="static\vendor.min.css" />
+    <Content Include="static\vendor.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -254,13 +258,16 @@
     <Content Include="Views\Account\VerifyCode.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="static\css\main.css.map" />
-    <Content Include="static\js\main.js.map" />
-    <Content Include="static\media\glyphicons-halflings-regular.eot" />
-    <Content Include="static\media\glyphicons-halflings-regular.ttf" />
-    <Content Include="static\media\glyphicons-halflings-regular.woff" />
-    <Content Include="static\media\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="static\assets\glyphicons-halflings-regular.eot" />
+    <Content Include="static\assets\glyphicons-halflings-regular.ttf" />
+    <Content Include="static\assets\glyphicons-halflings-regular.woff" />
+    <Content Include="static\assets\glyphicons-halflings-regular.woff2" />
+    <Content Include="static\app.min.css.map" />
+    <Content Include="static\app.min.js.map" />
+    <Content Include="static\polyfills.min.js.map" />
+    <Content Include="static\vendor.min.css.map" />
+    <Content Include="static\vendor.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
