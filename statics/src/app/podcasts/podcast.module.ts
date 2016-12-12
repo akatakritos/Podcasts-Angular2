@@ -11,6 +11,7 @@ import { PodcastListRowComponent } from './podcast-list-row.component';
 import { PodcastService } from './podcast.service';
 import { MetadataService } from './metadata.service';
 import { PodcastRoutingModule } from './podcast-routing.module';
+import { EpisodeSelectorComponent } from './episode-selector.component';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { PodcastRoutingModule } from './podcast-routing.module';
     declarations: [
         PodcastListComponent,
         PodcastEditComponent,
-        PodcastListRowComponent
+        PodcastListRowComponent,
+        EpisodeSelectorComponent
     ],
     exports: [
     ],

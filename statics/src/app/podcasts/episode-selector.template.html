@@ -1,0 +1,8 @@
+<div>
+    <table class="table">
+        <tr *ngFor="let episode of episodes">
+            <td>{{episode.filename}}</td>
+            <td><button class="btn" (click)="select(episode)">Pick</button></td>
+        </tr>
+    </table>
+</div>

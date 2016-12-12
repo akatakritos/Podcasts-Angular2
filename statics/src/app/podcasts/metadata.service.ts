@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, URLSearchParams } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 
 export interface PodcastFile {

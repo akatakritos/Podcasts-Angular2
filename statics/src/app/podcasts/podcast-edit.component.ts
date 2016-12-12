@@ -5,7 +5,7 @@ import { Title } from '@angular/platform-browser';
 
 import { Podcast } from './podcast';
 import { PodcastService } from './podcast.service';
-import { MetadataService } from './metadata.service';
+import { MetadataService, PodcastFile } from './metadata.service';
 
 @Component({
     templateUrl: 'podcast-edit.component.html'
@@ -22,7 +22,9 @@ export class PodcastEditComponent implements OnInit {
 
     }
 
-    podcast : Podcast
+    podcast : Podcast;
+    possibleEpisodes: PodcastFile[];
+    error: string;
 
     ngOnInit() : void {
 
@@ -41,13 +43,24 @@ export class PodcastEditComponent implements OnInit {
     }
 
     load(url:string) : void {
-        this.metadata.getMetadata(url).forEach(v => {
+        this.error = null;
+
+        this.metadata.getMetadata(url).subscribe(v => {
             this.podcast.description = v.description;
             this.podcast.title = v.title;
+            this.possibleEpisodes = v.possibleEpisodes;
 
             if (v.possibleEpisodes.length === 1) {
                 this.podcast.url = v.possibleEpisodes[0].url;
             }
+        }, error => {
+            console.log(error);
+            this.error = error.statusText || "unkown";
         });
+    }
+
+    pickEpisode(episode: PodcastFile) {
+        this.possibleEpisodes = null;
+        this.podcast.url = episode.url;
     }
 }

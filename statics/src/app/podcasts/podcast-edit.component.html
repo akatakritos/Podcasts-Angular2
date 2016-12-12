@@ -1,13 +1,31 @@
-<div class="row">
-    <div class="col-lg-12">
-        <label>Podcast Episode Page</label>
-        <div class="input-group">
-        <input type="text" class="form-control" placeholder="http://www.myfavoritepodcast.com/episodes/12" #episodePage />
-        <span class="input-group-btn">
-            <button class="btn btn-primary" (click)="load(episodePage.value)">Fetch</button>
-        </span>
-        </div><!-- /input-group -->
-        <p>We'll attempt to load the podcast download URL, title, and description from the episode page.</p>
+<div class="well">
+    <div class="row">
+        <div class="col-lg-12">
+            <label>Podcast Episode Page</label>
+            <div class="input-group">
+            <input type="text" class="form-control" placeholder="http://www.myfavoritepodcast.com/episodes/12" #episodePage />
+            <span class="input-group-btn">
+                <button class="btn btn-primary" (click)="load(episodePage.value)">Fetch</button>
+            </span>
+            </div><!-- /input-group -->
+            <p>We'll attempt to load the podcast information from the episode page.</p>
+        </div>
+    </div>
+
+    <div *ngIf="possibleEpisodes?.length > 1" >
+        <p class="alert alert-warning">Oops, it looks like we found more than one download link on that page.</p>
+        <p>Pick one from below or look on the <a target="_blank" href="{{episodePage.value}}">episode page</a> yourself and copy-paste a link.</p>
+        <episode-selector [episodes]="possibleEpisodes" (selected)="pickEpisode($event)"></episode-selector>
+    </div>
+
+    <div *ngIf="possibleEpisodes?.length === 0">
+        <p class="alert alert-warning">Oops, it looks like we couldn't find a download link on that page.</p>
+        <p>Take a look on the <a target="_blank" href="{{episodePage.value}}">episode page</a> yourself and copy-paste the link.</p>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger">
+        Darn! We failed to load the metadata ({{error}}). You can enter the details manually below.
+        You may want to visit the <a target="_blank" href="{{episodePage.value}}">episode page</a> to copy-paste details.
     </div>
 </div>
 
