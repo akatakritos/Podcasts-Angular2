@@ -23,7 +23,10 @@ export class PodcastListComponent implements OnInit {
         this.loading = true;
         this.titleService.setTitle("Current Podcasts");
         this.podcastService.getPodcasts()
-            .then(podcasts => this.podcasts = podcasts);
+            .then(podcasts => {
+                this.podcasts = podcasts;
+                this.loading = false;
+            });
 
     }
 
