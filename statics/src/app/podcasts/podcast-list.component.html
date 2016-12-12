@@ -1,14 +1,17 @@
-<div>
-    <a class="btn btn-primary" routerLink="new">Create</a>
+<spinner *ngIf="loading" text="Waiting for IIS to wake up"></spinner>
+<div *ngIf="!loading">
+    <div>
+        <a class="btn btn-primary" routerLink="new">Create</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr podcast-list-row *ngFor="let podcast of podcasts" [podcast]="podcast" (deleted)="deleted(podcast)"></tr>
+        </tbody>
+    </table>
 </div>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr podcast-list-row *ngFor="let podcast of podcasts" [podcast]="podcast" (deleted)="deleted(podcast)"></tr>
-    </tbody>
-</table>

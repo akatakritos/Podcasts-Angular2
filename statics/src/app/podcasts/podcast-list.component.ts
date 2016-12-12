@@ -10,6 +10,7 @@ import { PodcastService } from './podcast.service';
 export class PodcastListComponent implements OnInit {
 
     podcasts : Podcast[];
+    loading: boolean;
 
     constructor(
         private podcastService : PodcastService,
@@ -19,6 +20,7 @@ export class PodcastListComponent implements OnInit {
 
     ngOnInit() : void {
 
+        this.loading = true;
         this.titleService.setTitle("Current Podcasts");
         this.podcastService.getPodcasts()
             .then(podcasts => this.podcasts = podcasts);
