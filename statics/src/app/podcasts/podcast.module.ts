@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { PodcastListComponent } from './podcast-list.component';
 import { PodcastEditComponent } from './podcast-edit.component';
 import { PodcastListRowComponent } from './podcast-list-row.component';
@@ -14,7 +16,8 @@ import { PodcastRoutingModule } from './podcast-routing.module';
         HttpModule,
         CommonModule,
         FormsModule,
-        PodcastRoutingModule
+        PodcastRoutingModule,
+        SharedModule
     ],
     declarations: [
         PodcastListComponent,
