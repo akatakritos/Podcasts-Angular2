@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 
 import { Podcast } from './podcast';
 import { PodcastService } from './podcast.service';
+import { MetadataService } from './metadata.service';
 
 @Component({
     templateUrl: 'podcast-edit.component.html'
@@ -13,6 +14,7 @@ export class PodcastEditComponent implements OnInit {
 
     constructor(
         private podcastService : PodcastService,
+        private metadata: MetadataService,
         private router : Router,
         private location : Location,
         private titleService: Title
@@ -36,5 +38,16 @@ export class PodcastEditComponent implements OnInit {
 
     back() : void {
         this.location.back();
+    }
+
+    load(url:string) : void {
+        this.metadata.getMetadata(url).forEach(v => {
+            this.podcast.description = v.description;
+            this.podcast.title = v.title;
+
+            if (v.possibleEpisodes.length === 1) {
+                this.podcast.url = v.possibleEpisodes[0].url;
+            }
+        });
     }
 }

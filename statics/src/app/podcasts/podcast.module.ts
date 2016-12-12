@@ -9,6 +9,7 @@ import { PodcastListComponent } from './podcast-list.component';
 import { PodcastEditComponent } from './podcast-edit.component';
 import { PodcastListRowComponent } from './podcast-list-row.component';
 import { PodcastService } from './podcast.service';
+import { MetadataService } from './metadata.service';
 import { PodcastRoutingModule } from './podcast-routing.module';
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PodcastRoutingModule } from './podcast-routing.module';
     exports: [
     ],
     providers: [
-        PodcastService
+        PodcastService,
+        MetadataService
     ]
 })
 export class PodcastModule {
