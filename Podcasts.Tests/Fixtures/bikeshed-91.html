@@ -1,0 +1,376 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"fdf4a7ba21","applicationID":"14654312","transactionName":"c1dcEEZbDQ9WShgQWkRdQUtRRAgQXFxS","queueTime":0,"applicationTime":31,"agent":""}</script>
+    <script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-998.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0' name='viewport'>
+    <title>91: I Think It&#39;s a Fish | The Bike Shed</title>
+    <meta content='Derek briefly complains of the staleness of the asset pipeline in Rails 5, before Sean catches Derek up on Rails 5.1&#39;s support for Webpack, Yarn, and ES6. We also discuss the pain of deprecations in the upgrade to Rails 5.' name='description'>
+    <meta content='web development, ruby, javascript, rails' name='keywords'>
+    <meta content='app-id=935763119' name='apple-itunes-app'>
+    <meta content='http://bikeshed.fm//91' property='og:url'>
+    <meta content='website' property='og:type'>
+    <meta content='The Bike Shed' property='og:site_name'>
+    <meta content='91: I Think It&#39;s a Fish | The Bike Shed' property='og:title'>
+    <meta content='Derek briefly complains of the staleness of the asset pipeline in Rails 5, before Sean catches Derek up on Rails 5.1&#39;s support for Webpack, Yarn, and ES6. We also discuss the pain of deprecations in the upgrade to Rails 5.' property='og:description'>
+    <meta content='http://media.simplecast.com/episode/image/54682/small_1481130457-artwork.jpg' property='og:image'>
+    <meta content='700' property='og:image:width'>
+    <meta content='700' property='og:image:height'>
+    <meta content="91: I Think It's a Fish | The Bike Shed" name='og:title'>
+    <meta content="Derek briefly complains of the staleness of the asset pipeline in Rails 5, before Sean catches Derek up on Rails 5.1's support for Webpack, Yarn, and ES6. We also discuss the pain of deprecations in the upgrade to Rails 5." name='og:description'>
+    <meta content='https://media.simplecast.com/podcast/image/282/small_1433513863-artwork.jpg' name='og:image'>
+    <meta content='player' name='twitter:card'>
+    <meta content='@simplecast' name='twitter:site'>
+    <meta content="91: I Think It's a Fish | The Bike Shed" name='twitter:title'>
+    <meta content='https://simplecast.com/card/43c461a4' name='twitter:player'>
+    <meta content='300' name='twitter:player:width'>
+    <meta content='80' name='twitter:player:height'>
+    <meta content='http://audio.simplecast.com/54682.mp3' name='twitter:player:stream'>
+    <meta content='audio/mpeg' name='twitter:player:stream:content_type'>
+    <link rel="shortcut icon" type="image/png" href="https://assets.simplecast.com/assets/fallback/x16_favicon-902df8063f2cc6e2e3ab930d8956d1f4.png" sizes="16x16" />
+    <link rel="shortcut icon" type="image/png" href="https://assets.simplecast.com/assets/fallback/x32_favicon-fd84bfa93af33baafc9b1e5dc833b06c.png" sizes="32x32" />
+    <link rel="shortcut icon" type="image/png" href="https://assets.simplecast.com/assets/fallback/x64_favicon-9e4a5ed95403462e22cc15aa6031434b.png" sizes="64x64" />
+
+    <link rel="stylesheet theme" media="screen" href="https://assets.simplecast.com/assets/sites-simplecast-de73f0578127d2ec975efc1a86da3788.css" />
+    <script src="https://assets.simplecast.com/assets/header-063ba4c711377eeecdca89ad0f1b9d33.js"></script>
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://simplecast.com/podcasts/282/rss" />
+    <style>
+        /* line 1, (__TEMPLATE__) */
+        body {
+            background-color: #ffffff;
+        }
+
+        /* line 3, (__TEMPLATE__) */
+        a {
+            color: #c58637;
+        }
+            /* line 5, (__TEMPLATE__) */
+            a:hover {
+                color: #b17831;
+            }
+
+        /* line 8, (__TEMPLATE__) */
+        .site-theme-simplecast .jp-audio .jp-interface .jp-progress .jp-play-bar {
+            background-color: #c58637;
+        }
+
+        /* line 12, (__TEMPLATE__) */
+        .site-theme-flat.site-text-dark .jp-audio .jp-interface .jp-progress .jp-play-bar {
+            background-color: #c58637;
+        }
+    </style>
+    <style rel='custom_css'>
+        body {
+            border-top: 8px solid rgb(248, 213, 94);
+            background: #fff;
+            font-family: "freight-text-pro", Georgia, serif;
+        }
+
+        .site-text-dark {
+            color: rgba(46,48,58,0.96);
+        }
+
+            .site-text-dark a.podcast-title > h1 {
+                color: rgba(46,48,58,0.96);
+            }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "calluna-sans", Helvetica, sans-serif;
+        }
+
+        .podcast-header {
+            padding: 60px 0 40px;
+        }
+
+        .podcast-image {
+            display: block;
+            margin-bottom: 2em;
+        }
+
+            .podcast-image img {
+                border-radius: 5px;
+                display: block;
+                height: 96px;
+                margin: 0 auto;
+                width: 96px;
+            }
+
+        a.podcast-title > h1 {
+            font: 700 2rem/1.4em "calluna-sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+            font-size: 2.7rem;
+            font-family: "calluna-sans", Helvetica, sans-serif;
+            padding: 0 2em;
+            text-shadow: none;
+        }
+
+        @media (max-width: 600px) {
+            a.podcast-title > h1 {
+                font-size: 1.75rem;
+                padding: 0;
+            }
+        }
+
+        .podcast-nav {
+            padding-top: 40px;
+        }
+
+            .podcast-nav .podcast-nav-link {
+                background-size: 24px;
+                height: 24px;
+                width: 24px;
+            }
+
+        .podcast-episode-date {
+            font-family: "calluna-sans", Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0;
+            margin-bottom: 0.5em;
+            text-transform: none;
+        }
+
+        .podcast-description {
+            color: rgb(51, 51, 51);
+            font-family: "freight-text-pro", Georgia, serif;
+            font-size: 18px;
+            text-align: left;
+            text-shadow: none;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 50px;
+        }
+
+        .podcast-sponsors {
+            background: rgba(208, 208, 208, 0.25);
+            box-shadow: none;
+        }
+
+        .podcast-sponsor:hover {
+            background: rgba(255,255,255,0.8);
+        }
+
+        .podcast-episode {
+            border-bottom: 1px solid rgba(228,229,233,0.96);
+            box-shadow: none;
+        }
+
+            .podcast-episode > article {
+                margin-left: 0;
+            }
+
+        .podcast-episode-image {
+            display: none !important;
+        }
+
+        .podcast-episode-description {
+            font-size: 16px;
+        }
+
+        .podcast-page-navigation a {
+            font-family: "calluna-sans", Helvetica, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0;
+            margin-bottom: 0.5em;
+            text-transform: none;
+        }
+
+        .podcast-footer {
+            background: white;
+        }
+
+        .podcast-hosts h2 {
+            color: rgb(51, 51, 51);
+            font-family: "freight-text-pro", Georgia, serif;
+            text-shadow: none;
+        }
+
+        .newsletter-email-input {
+            margin-right: 10px;
+            width: 57%;
+        }
+
+        .email-container input {
+            display: inline-block;
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+
+            .email-container input[type="email"] {
+                background-color: white;
+                border-radius: 0.1875em;
+                border: 1px solid rgba(228,229,233,0.96);
+                box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+                box-sizing: border-box;
+                font-family: "calluna-sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+                transition: border-color;
+            }
+
+        .newsletter-submit-button {
+            background: rgb(248, 213, 94);
+            border-radius: 0.1875em;
+            border: 1px solid rgb(248, 213, 94);
+            color: #c58637;
+            font-family: "calluna-sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+            cursor: pointer;
+            -webkit-appearance: button;
+            width: 40%;
+        }
+    </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-1485842-33', 'auto');
+      ga('send', 'pageview');
+    </script>
+</head>
+<body class='site-text-dark site-theme-simplecast'>
+    <header class='podcast-header'>
+        <div class='container'>
+            <figure class="podcast-image"><img alt="The Bike Shed" src="https://media.simplecast.com/podcast/image/282/small_1433513863-artwork.jpg" /></figure>
+            <a class="podcast-title" title="The Bike Shed" href="http://bikeshed.fm/"><h1>The Bike Shed</h1></a>
+            <nav class='podcast-nav'>
+                <ul>
+                    <li><a class="podcast-nav-link nav-itunes hint--bottom hint--rounded" data-hint="Listen in iTunes" target="_blank" href="https://itunes.apple.com/us/podcast/the-bike-shed/id935763119">Listen in iTunes</a></li>
+                    <li><a class="podcast-nav-link nav-rss hint--bottom hint--rounded" data-hint="Subscribe via RSS" target="_blank" href="http://simplecast.com/podcasts/282/rss">Subscribe via RSS</a></li>
+                    <li><a class="podcast-nav-link nav-twitter hint--bottom hint--rounded" data-hint="Follow on Twitter" target="_blank" href="https://twitter.com/_bikeshed">Follow on Twitter</a></li>
+
+                    <li><a class="podcast-nav-link nav-email hint--bottom hint--rounded" data-hint="Email Us" href="mailto:hosts@bikeshed.fm">Email Us</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class='container podcast-main'>
+        <div class='podcast-description'>
+            <p>On The Bike Shed, hosts Derek Prior, Sean Griffin, Laila Winner, and guests discuss their development experience and challenges with Ruby, Rails, JavaScript, and whatever else is drawing their attention, admiration, or ire this week.</p>
+        </div>
+        <div class='podcast-episode podcast-episode-featured'>
+            <a class="podcast-episode-image" href="/91"><img src="https://media.simplecast.com/episode/image/54682/thumb_1481130457-artwork.jpg" alt="Thumb 1481130457 artwork" /></a>
+            <article>
+                <header>
+                    <time class='podcast-episode-date' datetime='2016-12-08'>8 December 2016</time>
+                    <h2 class='podcast-episode-title'><a href="/91">91: I Think It&#39;s a Fish</a></h2>
+                </header>
+                <section>
+                    <div class='podcast-episode-player'>
+                        <div class='jp-jplayer' id='simplecast-audio-player'></div>
+                        <div class='jp-audio simplecast-player' data-duration='2465' data-media='http://audio.simplecast.com/54682.mp3' id='jp_container_1'>
+                            <div class='jp-type-single'>
+                                <div class='jp-gui jp-interface'>
+                                    <nav class='jp-controls jp-play-controls jp-gui-item'>
+                                        <a class='jp-play' href='javascript:;' tabindex='1' title='Play'><img class="svg" src="https://assets.simplecast.com/assets/play-c2adc792704e12776df65d83b1ff2001.svg" alt="Play" /></a>
+                                        <a class='jp-pause' href='javascript:;' tabindex='1' title='Pause'><img class="svg" src="https://assets.simplecast.com/assets/pause-4213afea571305e24d712da7dc39269f.svg" alt="Pause" /></a>
+                                    </nav>
+                                    <nav class='jp-rewind jp-gui-item'>
+                                        <a class='main-player-rewind' href='javascript:;' tabindex='1' title='30 second rewind'><img class="svg" src="https://assets.simplecast.com/assets/rewind-2919fb62456a7d44830521e664476871.svg" alt="Rewind" /></a>
+                                    </nav>
+                                    <div class='jp-time jp-current-time jp-gui-item'></div>
+                                    <div class='jp-gui-item jp-progress-bar'>
+                                        <div class='jp-progress'>
+                                            <div class='jp-seek-bar' title='Seek'>
+                                                <div class='jp-play-bar'></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class='jp-time jp-duration jp-gui-item'></div>
+                                    <nav class='jp-controls jp-volume-controls jp-gui-item'>
+                                        <a class='jp-mute' href='javascript:;' tabindex='1' title='Mute'><img class="svg" src="https://assets.simplecast.com/assets/mute-b005edd4f53ab7d10390c7233e90b241.svg" alt="Mute" /></a>
+                                        <a class='jp-unmute' href='javascript:;' tabindex='1' title='Unmute'><img class="svg" src="https://assets.simplecast.com/assets/unmute-96f12f0f20e5e3907eba9ee4f2d21ab6.svg" alt="Unmute" /></a>
+                                    </nav>
+                                    <nav class='jp-player-speed main-player-speed jp-gui-item' title='Change playback speed'>1x</nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='podcast-episode-description'>
+                        <p>Derek briefly complains of the staleness of the asset pipeline in Rails 5, before Sean catches Derek up on Rails 5.1's support for Webpack, Yarn, and ES6. We also discuss the pain of deprecations in the upgrade to Rails 5.</p>
+
+                        <ul>
+                            <li><a href="http://caniuse.com/#feat=form-validation">Can I Use: HTML 5 validations</a></li>
+                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity"><code>checkValidity()</code></a></li>
+                            <li><a href="http://eslint.org">ESLint</a></li>
+                            <li><a href="https://github.com/rails/rails/pull/27288">Rails 5.1 can use Webpack and Yarn</a></li>
+                            <li><a href="https://robots.thoughtbot.com/a-tour-of-rails-jquery-ujs">A Tour of Rails’ jQuery UJS</a></li>
+                            <li><a href="https://knowledgelayer.softlayer.com/faq/how-does-origin-pull-work">How Does Origin Pull Work?</a></li>
+                            <li><a href="https://github.com/airblade/paper_trail/pull/899">PaperTrail Rails 5.1 pull request</a></li>
+                            <li><a href="https://github.com/thoughtbot/clearance/blob/master/spec/support/http_method_shim.rb">A shim for Rails 5 controller tests</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <footer class='podcast-episode-footer'>
+                    <a rel="nofollow" class="podcast-episode-download" download="" href="http://audio.simplecast.com/54682.mp3">Download MP3 (37.6 MB)</a>
+                </footer>
+            </article>
+            <div class='podcast-sponsors podcast-sponsors-1'>
+                <span class='podcast-sponsors-label'>Sponsor</span>
+                <a title="thoughtbot swag" class="podcast-sponsor" target="_blank" href="https://thoughtbot.com/podcasts">
+                    <img src="https://media.simplecast.com/sponsor/logo_image/479/support-size.png" alt="Support size" />
+                </a>
+            </div>
+        </div>
+        <div id='disqus_thread'></div>
+        <script>
+        var disqus_shortname = 'bikeshedfm';
+
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        </script>
+        <div class='podcast-page-navigation'>
+            <a href="/episodes">View All Episodes</a>
+        </div>
+    </section>
+    <footer class='podcast-footer'>
+        <div class='podcast-hosts'>
+            <h2>Your Hosts</h2>
+            <div class='podcast-host'>
+                <a class="podcast-host-avatar" href="https://twitter.com/derekprior"><img src="https://pbs.twimg.com/profile_images/654041349931429889/XF2q7T_k.jpg" alt="Xf2q7t k" /></a>
+                <h3 class='podcast-host-name'>Derek Prior</h3>
+                <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/derekprior">Follow @derekprior</a>
+            </div>
+            <div class='podcast-host'>
+                <a class="podcast-host-avatar" href="https://twitter.com/malandr1na"><img src="https://pbs.twimg.com/profile_images/780151580439957504/JnJ38-I4.jpg" alt="Jnj38 i4" /></a>
+                <h3 class='podcast-host-name'>Laila</h3>
+                <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/malandr1na">Follow @malandr1na</a>
+            </div>
+            <div class='podcast-host'>
+                <a class="podcast-host-avatar" href="https://twitter.com/sgrif"><img src="https://pbs.twimg.com/profile_images/669150127399923713/B8CrEDb8.jpg" alt="B8credb8" /></a>
+                <h3 class='podcast-host-name'>Sean Griffin</h3>
+                <a class="twitter-follow-button" data-show-count="false" href="https://twitter.com/sgrif">Follow @sgrif</a>
+            </div>
+        </div>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+        <p>
+
+
+        </p>
+        <nav class='podcast-nav'>
+            <ul>
+                <li><a class="podcast-nav-link nav-itunes hint--bottom hint--rounded" data-hint="Listen in iTunes" target="_blank" href="https://itunes.apple.com/us/podcast/the-bike-shed/id935763119">Listen in iTunes</a></li>
+                <li><a class="podcast-nav-link nav-rss hint--bottom hint--rounded" data-hint="Subscribe via RSS" target="_blank" href="http://simplecast.com/podcasts/282/rss">Subscribe via RSS</a></li>
+                <li><a class="podcast-nav-link nav-twitter hint--bottom hint--rounded" data-hint="Follow on Twitter" target="_blank" href="https://twitter.com/_bikeshed">Follow on Twitter</a></li>
+
+                <li><a class="podcast-nav-link nav-email hint--bottom hint--rounded" data-hint="Email Us" href="mailto:hosts@bikeshed.fm">Email Us</a></li>
+
+            </ul>
+        </nav>
+    </footer>
+    <script>
+      var promo = '<div class="email-container"><form action="https://formkeep.com/f/a3b405815c39" method="POST"><input name="utf8" type="hidden" value="✓"><input aria-label="Your email address" class="newsletter-email-input" name="email" placeholder="Your email address" required type="email"><input class="newsletter-submit-button" type="submit" value="Get THE BIKE SHED weekly"></form></div>';
+      $(".podcast-description").append(promo);
+      var sponsorship = 'For sponsorship opportunities, inquire at <a href ="https://thoughtbot.com/sponsorship">https://thoughtbot.com/sponsorship</a>.';
+      $(".podcast-footer").append(sponsorship);
+    </script>
+
+    <script src="https://assets.simplecast.com/assets/sites-4cf9632a091c0104c4db540c16c4add3.js"></script>
+</body>
+</html>
