@@ -8,7 +8,6 @@ namespace Podcasts.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
         }
     }
 }
