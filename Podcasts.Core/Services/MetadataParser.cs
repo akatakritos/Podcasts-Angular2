@@ -33,6 +33,7 @@ namespace Podcasts.Core.Services
             return doc.QuerySelectorAll("a")
                 .Select(a => a.GetAttributeValue("href", ""))
                 .Where(href => href.Contains(".mp3"))
+                .Distinct()
                 .Select(href => PossibleEpisodeFile.Create(page, href))
                 .ToList();
         }
