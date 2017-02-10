@@ -7,6 +7,10 @@ import { Podcast } from './podcast';
 import { PodcastService } from './podcast.service';
 import { MetadataService, PodcastFile } from './metadata.service';
 
+function getFilename(url: string) {
+    return url.split('/').pop().split('#')[0].split('?')[0];
+}
+
 @Component({
     templateUrl: 'podcast-edit.component.html'
 })
@@ -25,6 +29,7 @@ export class PodcastEditComponent implements OnInit {
     podcast : Podcast;
     possibleEpisodes: PodcastFile[];
     error: string;
+    statusMessage: string;
 
     ngOnInit() : void {
 
@@ -44,6 +49,14 @@ export class PodcastEditComponent implements OnInit {
 
     load(url:string) : void {
         this.error = null;
+        this.statusMessage = null;
+
+        if (url.includes('mp3')){
+            this.podcast.url = url;
+            this.podcast.title = getFilename(url);
+            this.statusMessage = "It looks like the URL you entered was for an episode media file. Fill in the rest of the fields below.";
+            return;
+        }
 
         this.metadata.getMetadata(url).subscribe(v => {
             this.podcast.description = v.description;

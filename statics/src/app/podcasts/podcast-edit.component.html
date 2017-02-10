@@ -27,6 +27,10 @@
         Darn! We failed to load the metadata ({{error}}). You can enter the details manually below.
         You may want to visit the <a target="_blank" href="{{episodePage.value}}">episode page</a> to copy-paste details.
     </div>
+
+    <div *ngIf="statusMessage" class="alert alert-info">
+        {{statusMessage}}
+    </div>
 </div>
 
 <div class="row">
