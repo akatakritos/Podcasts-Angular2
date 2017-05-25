@@ -52,6 +52,7 @@ namespace Podcasts.Core.Services
                 writer.WriteElementString("link", ep.DownloadUrl);
                 writer.WriteElementString("guid", ep.DownloadUrl);
                 writer.WriteElementString("description", ep.Description);
+                writer.WriteElementString("pubDate", ep.AddedAt.ToString("r"));
 
                 writer.WriteStartElement("enclosure");
                 writer.WriteAttributeString("url", ep.DownloadUrl);

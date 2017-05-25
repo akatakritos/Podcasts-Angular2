@@ -28,7 +28,7 @@ namespace Podcasts.Tests.Services
                 Description = "Testing podcast",
                 Episodes = new List<Podcast>()
                 {
-                    new Podcast() { Title = "Episode 1", Description = "Episode 1 Description", DownloadUrl = "http://example.com/test.mp3" }
+                    new Podcast() { Title = "Episode 1", Description = "Episode 1 Description", DownloadUrl = "http://example.com/test.mp3", AddedAt = DateTime.UtcNow}
                 }
             };
         }
@@ -69,6 +69,19 @@ namespace Podcasts.Tests.Services
             var doc = XDocument.Parse(rss);
             var titles = doc.XPathSelectElements("/rss/channel/item").Select(e => e.Element("title").Value);
             Check.That(titles).ContainsExactly("Episode 1", "Episode 2");
+        }
+
+        [Fact]
+        public void HasAPubDateOnTheItem()
+        {
+            var rss = FeedGenerator.GenerateAsString(feed);
+            _output.WriteLine(rss);
+
+            var doc = XDocument.Parse(rss);
+            var name = doc.XPathSelectElements("/rss/channel/item")
+                .First()
+                .Element("pubDate").Value;
+            Check.That(name).IsEqualTo(feed.Episodes.First().AddedAt.ToString("r"));
         }
     }
 }
